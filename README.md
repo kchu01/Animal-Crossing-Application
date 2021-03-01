@@ -18,19 +18,40 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 
 ## Wireframes
 
+* Main page - includes nav bar for users to sign in
+* Login page - form for username and pw
+* Main page (logged in) - nav bar with a favorites and logout route
+* Favorites page (logged in) - user able to favorite and view/update/delete items
+* Logout page - tells user they have been logged out 
+
 ## ERDs
 
 ![ERDs](/imgs/ERD.PNG)
 
 ## RESTful Routing Chart
 
-| Method  | URL             | 
-| ------- | ---             |
-| GET     | /villagers      |
-| POST    | /villagers      |
-| GET     | /villagers/:id  |
-| PUT     | /villagers/:id  |
-| DELETE  | /villagers/:id  |
+Villagers Chart
+
+
+| Method  | URL             | Functionality      | View                       |
+| ------- | ----------      | --------------     | ------------------------   |
+| GET     | /villagers      | list all villagers | show villagers/index.ejs   |
+| POST    | /villagers      | add a villager     | redirect to /villagers/:id |
+| GET     | /villagers/:id  | show one villager  | show villagers/detail.ejs  |
+| PUT     | /villagers/:id  | update a villager  | redirect to /villagers/:id |
+| DELETE  | /villagers/:id  | delete a villager  | redirect to /villagers     |
+
+
+Items Chart
+
+
+| Method  | URL         | Functionality  | View                   |
+| ------- | ----------  | -------------- | ---------------------- |
+| GET     | /items      | list all items | show items/index.ejs   |
+| POST    | /items      | add an item    | redirect to /items/:id |
+| GET     | /items/:id  | show one item  | show items/detail.ejs  |
+| PUT     | /items/:id  | update a item  | redirect to /items/:id |
+| DELETE  | /items/:id  | delete a item  | redirect to /items     |
 
 ## MVP Goals
 
@@ -46,6 +67,36 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 * Random page for user to click on to find something new
 
 ## Daily Sprints
+
+* Monday
+  * Soft/hard pitch
+  * Test API
+  * Wireframe app
+  * Plan routes 
+
+* Tuesday
+  * Install all required packages
+  * Set up basic html/css
+  * Create db models - test db
+  * Stub routes - test routes
+  * Build routes
+
+* Wednesday
+  * Finish routes
+  * Create views
+
+* Thursday
+  * Finish views
+  * MVP
+  * Authentication
+
+* Friday
+  * Style pages
+  * Stretch goals
+
+* Saturday / Sunday
+  * More styling
+  * Stretch goals
 
 ## Resources | APIs
 
