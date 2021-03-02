@@ -18,7 +18,7 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 
 ## Wireframes
 
-* Main page - includes nav bar for users to sign in
+![main](/imgs/Main.PNG)
 * Login page - form for username and pw
 * Main page (logged in) - nav bar with a favorites and logout route
 * Favorites page (logged in) - user able to favorite and view/update/delete items
@@ -101,4 +101,6 @@ Items Chart
 ## Resources | APIs
 
 For this application I will be using the [ACNHAPI](http://achnapi.com/)
+
+* Poket Camp Img | https://www.clipartkey.com/view/Jobbmi_animal-crossing-pocket-camp-tree/
 

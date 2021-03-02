@@ -1,0 +1,34 @@
+body {
+    margin: 0px;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(123, 192, 180);
+    padding: 10px;
+}
+
+nav a {
+    color:white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: black;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./imgs/homepage.png");
+    background-size: cover;
+}
