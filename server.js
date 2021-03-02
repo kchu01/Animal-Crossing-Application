@@ -2,7 +2,6 @@
 const express = require('express')
 const ejsLayouts = require('express-ejs-layouts')
 const rowdy = require('rowdy-logger')
-const axios = require('axios')
 const morgan = require('morgan')
 
 const app = express()
@@ -17,6 +16,8 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 
 // Controllers
+app.use('/users', require('./controllers/userController.js'))
+app.use('/villagers', require('./controllers/villagerController.js'))
 
 // Routes
 app.get('/', (req, res) => {

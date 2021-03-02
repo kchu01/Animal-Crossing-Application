@@ -18,7 +18,7 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 
 ## Wireframes
 
-![main](/imgs/Main.PNG)
+![main](/public/imgs/Main.PNG)
 * Login page - form for username and pw
 * Main page (logged in) - nav bar with a favorites and logout route
 * Favorites page (logged in) - user able to favorite and view/update/delete items
@@ -26,7 +26,7 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 
 ## ERDs
 
-![ERDs](/imgs/ERD.PNG)
+![ERDs](/public/imgs/ERD.PNG)
 
 ## RESTful Routing Chart
 
@@ -73,10 +73,12 @@ Items Chart
   * Test API
   * Wireframe app
   * Plan routes 
+  * Install required packages
+  * Set up basic html/css
+  * Start user routes
 
 * Tuesday
-  * Install all required packages
-  * Set up basic html/css
+  * User routes/Villager routes
   * Create db models - test db
   * Stub routes - test routes
   * Build routes

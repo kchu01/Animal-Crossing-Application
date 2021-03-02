@@ -1,0 +1,4 @@
+install packages/set up basic html and css
+set up inital route ('/') main index
+set up user routes first (login/logout)
+set up api and villagers routes
