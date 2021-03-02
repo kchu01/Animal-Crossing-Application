@@ -18,11 +18,14 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 
 ## Wireframes
 
+
 ![main](/public/imgs/Main.PNG)
-* Login page - form for username and pw
-* Main page (logged in) - nav bar with a favorites and logout route
-* Favorites page (logged in) - user able to favorite and view/update/delete items
-* Logout page - tells user they have been logged out 
+![main](/public/imgs/submitform.PNG)
+![main](/public/imgs/villagertab.PNG)
+![main](/public/imgs/villagerdetail.PNG)
+![main](/public/imgs/itemtab.PNG)
+![main](/public/imgs/itemdetail.PNG)
+![main](/public/imgs/favoritetab.PNG)
 
 ## ERDs
 
@@ -74,12 +77,13 @@ Items Chart
   * Wireframe app
   * Plan routes 
   * Install required packages
+  * Create db models - test db
   * Set up basic html/css
   * Start user routes
 
 * Tuesday
-  * User routes/Villager routes
-  * Create db models - test db
+  * Update readme with wireframes
+  * User routes/Villager routes - create loops
   * Stub routes - test routes
   * Build routes
 
@@ -104,5 +108,8 @@ Items Chart
 
 For this application I will be using the [ACNHAPI](http://achnapi.com/)
 
-* Poket Camp Img | https://www.clipartkey.com/view/Jobbmi_animal-crossing-pocket-camp-tree/
+  * https://stackoverflow.com/questions/3298477/get-the-first-key-name-of-a-javascript-object
+  
+* Images:
+  * Poket Camp Img | https://www.clipartkey.com/view/Jobbmi_animal-crossing-pocket-camp-tree/
 

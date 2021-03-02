@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         const response = await axios.get(acnhURL)
         const villagers = response.data.ant00.name
         const name = Object.values(villagers)[0]
-        // for in loop to grab (ant00) the objects
+        // for in loop to grab (currently ant00) the objects
         console.log(name)
         res.render('./villagers', { name: name })
     } catch (error) {
@@ -17,6 +17,6 @@ router.get('/', async (req, res) => {
     }
 })
 
-
+// make separate villagers fo rnon users and fav users
 
 module.exports = router
