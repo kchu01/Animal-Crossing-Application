@@ -1,3 +1,7 @@
 <h1>Villagers</h1>
 
-<%= name %>
+<% villagers.forEach(villager=> { %>
+    <h3>
+        <a href=/villagers/<%=villager.id %>><%= villager.name %> </a>
+    </h3>
+    <% }) %>

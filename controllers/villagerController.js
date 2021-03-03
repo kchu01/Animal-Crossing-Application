@@ -7,12 +7,23 @@ router.get('/', async (req, res) => {
     try {
         const acnhURL = 'https://acnhapi.com/v1/villagers'
         const response = await axios.get(acnhURL)
-        const villagers = response.data
-        const name = Object.values(villagers)[0].name['name-USen']
 
+        const villagers = []
 
-        console.log(name)
-        res.render('./villagers', { name: name })
+        for (const villager in response.data) {
+            const villagerObj = response.data[villager]
+            const nameObj = villagerObj['name']
+            const name = nameObj['name-USen']
+            // names.push(name)
+            let villagerData = {
+                name: name,
+                id: villagerObj.id
+            }
+            villagers.push(villagerData)
+        }
+        villagers.splice(50, villagers.length)
+        res.render('./villagers', { villagers: villagers })
+
     } catch (error) {
         console.log(error)
     }
