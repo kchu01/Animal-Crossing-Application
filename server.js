@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 // Controllers
 app.use('/users', require('./controllers/userController.js'))
 app.use('/villagers', require('./controllers/villagerController.js'))
+app.use('/household_items', require('./controllers/household_itemController'))
 
 // Routes
 app.get('/', (req, res) => {

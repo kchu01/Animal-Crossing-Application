@@ -32,9 +32,18 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 ![ERDs](/public/imgs/ERD.PNG)
 
 ## RESTful Routing Chart
+Users Chart
+
+| Method  | URL             | Functionality   | View                 |
+| ------- | ----------      | --------------  | -------------------  |
+| GET     | /users/new      | sign up         | redirect to /index   |
+| POST    | /users          | create new user | redirect to /profile |
+| GET     | /users/login    | login           | redirect to /index   |
+| POST    | /users/login    | logs in new user| redirect to /profile |
+| GET     | /users/logout   | logout          | redirect to /index   |
+
 
 Villagers Chart
-
 
 | Method  | URL             | Functionality      | View                       |
 | ------- | ----------      | --------------     | ------------------------   |
@@ -45,16 +54,16 @@ Villagers Chart
 | DELETE  | /villagers/:id  | delete a villager  | redirect to /villagers     |
 
 
-Items Chart
 
+Household_Items Chart
 
-| Method  | URL         | Functionality  | View                   |
-| ------- | ----------  | -------------- | ---------------------- |
-| GET     | /items      | list all items | show items/index.ejs   |
-| POST    | /items      | add an item    | redirect to /items/:id |
-| GET     | /items/:id  | show one item  | show items/detail.ejs  |
-| PUT     | /items/:id  | update a item  | redirect to /items/:id |
-| DELETE  | /items/:id  | delete a item  | redirect to /items     |
+| Method  | URL                   | Functionality  | View                   |
+| ------- | ----------            | -------------- | ---------------------- |
+| GET     | /household_items      | list all items | show items/index.ejs   |
+| POST    | /household_items      | add an item    | redirect to /items/:id |
+| GET     | /household_items/:id  | show one item  | show items/detail.ejs  |
+| PUT     | /household_items/:id  | update a item  | redirect to /items/:id |
+| DELETE  | /household_items/:id  | delete a item  | redirect to /items     |
 
 ## MVP Goals
 

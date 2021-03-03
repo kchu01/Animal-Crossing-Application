@@ -2,3 +2,34 @@ install packages/set up basic html and css
 set up inital route ('/') main index
 set up user routes first (login/logout)
 set up api and villagers routes
+
+
+
+
+errors to fix:
+* villager details shows up on console but not rendering 
+* household_items can grab data from console but cannot grab name 
+* navbar separation
+
+<!-- <nav>
+    <div>
+        <a href="/villagers">Villagers</a>
+        <a href="/household_items">Items</a>
+    </div>
+
+    <div>
+        <% if (user) { %>
+            <a href="/users/logout">Logout</a>
+            <% } else { %>
+                <a href="/">Home</a>
+                <a href="/users/new">Sign Up</a>
+                <a href="/users/login">Login</a>
+                <% } %>
+    </div>
+
+</nav> -->
+
+<% if (user) { %>
+    <h4>Welcome, <%= user.email %>
+    </h4>
+    <% } %>

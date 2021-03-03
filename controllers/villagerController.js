@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
                 name: name,
                 id: villagerObj.id,
                 imageUrl: villagerObj.image_uri
-
             }
             villagers.push(villagerData)
         }
@@ -32,14 +31,24 @@ router.get('/', async (req, res) => {
 })
 
 // GET villager/id: - SHOW one villager deets
-// router.get('/:id', async (req, res) => {
-//     try {
-//         const villagerDetails = await axios.get(villagers)
-//         console.log(villagerDetails)
-//     } catch (error) {
-//         console.log(error)
-//     }
-// })
+router.get('/:id', async (req, res) => {
+    try {
+        const acnhURL = `https://acnhapi.com/v1/villagers/${req.params.id}`
+        const response = await axios.get(acnhURL)
+        const villager = response.data
+
+        res.render('./villagers/show'), { villager: villager }
+
+        console.log(villager)
+    } catch (error) {
+        console.log(error)
+    }
+})
+// can display details in the console but not rendering properly
+
+// grab api again to look up id
+// store in a global var to grab data from db (array index or loop)
+
 
 // make separate villagers fo rnon users and fav users
 
