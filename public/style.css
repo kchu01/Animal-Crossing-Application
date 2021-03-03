@@ -32,3 +32,25 @@ nav a:hover {
     background-image: url("./imgs/homepage.png");
     background-size: cover;
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 15px;
+}
+
+.gallery_img {
+    width: 100%;
+    object-fit: contain;
+}
+
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.sticky + .container {
+    padding-top: 102px;
+} */

@@ -1,7 +1,13 @@
 <h1>Villagers</h1>
 
-<% villagers.forEach(villager=> { %>
-    <h3>
-        <a href=/villagers/<%=villager.id %>><%= villager.name %> </a>
-    </h3>
-    <% }) %>
+<div class="gallery">
+    <% villagers.forEach(villager=> { %>
+        <h3>
+            <img class="gallery_img" img src="<%= villager.imageUrl %>" alt="Villager Image">
+
+            <a href=/villagers/<%=villager.id %>><%= villager.name %> </a>
+
+
+        </h3>
+        <% }) %>
+</div>

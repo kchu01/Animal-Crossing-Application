@@ -2,7 +2,7 @@ const router = require('express').Router()
 const db = require('../models')
 const axios = require('axios')
 
-// GET villager index - /villager
+// GET villager index - /villager - gets data from the api
 router.get('/', async (req, res) => {
     try {
         const acnhURL = 'https://acnhapi.com/v1/villagers'
@@ -17,7 +17,9 @@ router.get('/', async (req, res) => {
             // names.push(name)
             let villagerData = {
                 name: name,
-                id: villagerObj.id
+                id: villagerObj.id,
+                imageUrl: villagerObj.image_uri
+
             }
             villagers.push(villagerData)
         }

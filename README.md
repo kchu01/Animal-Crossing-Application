@@ -83,9 +83,10 @@ Items Chart
 
 * Tuesday
   * Update readme with wireframes
+  * Test API
+  * Render villager name and image
   * User routes/Villager routes - create loops
-  * Stub routes - test routes
-  * Build routes
+  * Format grid view of villagers
 
 * Wednesday
   * Finish routes
@@ -109,6 +110,8 @@ Items Chart
 For this application I will be using the [ACNHAPI](http://achnapi.com/)
 
   * https://stackoverflow.com/questions/3298477/get-the-first-key-name-of-a-javascript-object
+  * https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/
+  * https://www.w3schools.com/howto/howto_js_sticky_header.asp
   
 * Images:
   * Poket Camp Img | https://www.clipartkey.com/view/Jobbmi_animal-crossing-pocket-camp-tree/
