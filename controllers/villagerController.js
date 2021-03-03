@@ -31,6 +31,16 @@ router.get('/', async (req, res) => {
     }
 })
 
+// GET villager/id: - SHOW one villager deets
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const villagerDetails = await axios.get(villagers)
+//         console.log(villagerDetails)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// })
+
 // make separate villagers fo rnon users and fav users
 
 module.exports = router

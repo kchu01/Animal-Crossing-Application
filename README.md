@@ -68,6 +68,8 @@ Items Chart
 * Add more models/table for the users such as special events, DIY recipes, art, or music
 * On the main page, display the villager's birthday depending on day
 * Random page for user to click on to find something new
+* Sticky Navbar
+* Pagination
 
 ## Daily Sprints
 
@@ -89,15 +91,20 @@ Items Chart
   * Format grid view of villagers
 
 * Wednesday
-  * Finish routes
-  * Create views
+  * Show details page on Villagers
+  * Items index page
+  * Items show details page 
+  * Start working on logging in and signing out (creating the pages and forms)
 
 * Thursday
-  * Finish views
-  * MVP
+  * Finish logging in/out
+  * Create favorites route
+  * Add favorites page
   * Authentication
 
 * Friday
+  * MVP
+  * Correct any bugs
   * Style pages
   * Stretch goals
 
