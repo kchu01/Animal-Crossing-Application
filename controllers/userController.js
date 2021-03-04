@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 
 // LOGIN - GET route - /users/login 
 router.get('/login', (req, res) => {
-    res.redirect('users/profile')
+    res.render('users/login')
 })
 
 // LOGIN - POST - user login pw -- NEED TO WORK ON
@@ -31,10 +31,18 @@ router.post('/login', async (req, res) => {
     const user = await db.user.findOne({
         where: { username: req.body.username }
     })
-    res.render('index', { errors: "Invalid username/password" })
+    if (user) {
+        res.cookie('userId', user.id)
+        res.redirect('/users/profile')
+    } else {
+        res.render('index', { errors: "Invalid username/password" })
+    }
 })
 
-// PROFILE - GET 
+// PROFILE - GET - After login, user gets sent to the profile page 
+router.get('/profile', (req, res) => {
+    res.render('users/profile')
+})
 
 // LOGOUT - GET route - /users/logout
 router.get('/logout', (req, res) => {

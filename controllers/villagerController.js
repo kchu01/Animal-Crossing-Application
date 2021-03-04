@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             const villagerObj = response.data[villager]
             const nameObj = villagerObj['name']
             const name = nameObj['name-USen']
-            // names.push(name)
+
             let villagerData = {
                 name: name,
                 id: villagerObj.id,
@@ -37,19 +37,12 @@ router.get('/:id', async (req, res) => {
         const response = await axios.get(acnhURL)
         const villager = response.data
 
-        res.render('./villagers/show'), { villager: villager }
-
-        console.log(villager)
+        res.render('./villagers/show', { villager: villager })
     } catch (error) {
         console.log(error)
     }
 })
-// can display details in the console but not rendering properly
-
-// grab api again to look up id
-// store in a global var to grab data from db (array index or loop)
 
 
-// make separate villagers fo rnon users and fav users
 
 module.exports = router

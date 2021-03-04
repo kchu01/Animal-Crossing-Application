@@ -6,10 +6,13 @@ set up api and villagers routes
 
 
 
-errors to fix:
-* villager details shows up on console but not rendering 
-* household_items can grab data from console but cannot grab name 
+bugs to fix:
+* solved - villager details shows up on console but not rendering
+* solved - household_items can grab data from console but cannot grab name 
+* user is not defined - navbar
 * navbar separation
+
+
 
 <!-- <nav>
     <div>
@@ -30,6 +33,6 @@ errors to fix:
 </nav> -->
 
 <% if (user) { %>
-    <h4>Welcome, <%= user.email %>
+    <h4>Welcome, <%= user.username %>
     </h4>
     <% } %>

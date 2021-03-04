@@ -11,14 +11,17 @@ router.get('/', async (req, res) => {
         const householdItems = []
 
         for (const householdItem in responce.data) {
-            const householdItemObj = responce.data[householdItem] // works
-            const nameObj = householdItemObj['name'] // says undefined
-            // const name = nameObj['name-USen']
-
-
-            // console.log(nameObj)
+            const householdItemArray = responce.data[householdItem]
+            const name = householdItemArray[0].name['name-USen']
+            let householdData = {
+                name: name,
+                imageUrl: householdItemArray.image_uri // shows undefined
+            }
+            console.log(householdData)
+            householdItems.push(householdData)
         }
         householdItems.splice(10, householdItems.length)
+        res.render('./household_items', { householdItems: householdItems })
     } catch (error) {
         console.log(error)
     }

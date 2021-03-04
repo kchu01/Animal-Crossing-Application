@@ -1,0 +1,10 @@
+<h1>Household Items</h1>
+
+<div class="gallery">
+    <% householdItems.forEach(householdItem=> { %>
+        <h3>
+            <img src="<%= householdItem.imageUrl %>">
+            <a href=/householdItems/<%=householdItem.id %>><%=householdItem.name %></a>
+        </h3>
+        <% }) %>
+</div>
