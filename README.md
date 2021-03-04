@@ -106,16 +106,16 @@ Household_Items Chart
   * Start working on logging in and signing out (creating the pages and forms)
 
 * Thursday
-  * Finish logging in/out
+  * Finish logging in/out - fix navbar to display favorites when logged in
   * Create favorites route
   * Add favorites page
-  * Authentication
 
 * Friday
-  * MVP
+  * Authentication
   * Correct any bugs
   * Style pages
   * Stretch goals
+  * MVP
 
 * Saturday / Sunday
   * More styling

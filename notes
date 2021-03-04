@@ -9,8 +9,8 @@ set up api and villagers routes
 bugs to fix:
 * solved - villager details shows up on console but not rendering
 * solved - household_items can grab data from console but cannot grab name 
-* user is not defined - navbar
-* navbar separation
+* user is not defined - navbar separation
+* create favorites page that takes both villagers and items
 
 
 

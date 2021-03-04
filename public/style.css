@@ -45,6 +45,11 @@ nav a:hover {
     object-fit: contain;
 }
 
+.favorite {
+    display: grid;
+    grid-auto-flow: column;
+}
+
 /* .sticky {
     position: fixed;
     top: 0;

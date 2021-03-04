@@ -12,12 +12,12 @@ router.get('/', async (req, res) => {
 
         for (const householdItem in responce.data) {
             const householdItemArray = responce.data[householdItem]
-            const name = householdItemArray[0].name['name-USen']
+            const itemArray = householdItemArray[0]
+            const name = itemArray.name['name-USen']
             let householdData = {
                 name: name,
-                imageUrl: householdItemArray.image_uri // shows undefined
+                imageUrl: itemArray.image_uri // shows undefined, maybe separte const name
             }
-            console.log(householdData)
             householdItems.push(householdData)
         }
         householdItems.splice(10, householdItems.length)
