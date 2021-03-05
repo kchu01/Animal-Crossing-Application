@@ -4,10 +4,10 @@ const express = require('express')
 const ejsLayouts = require('express-ejs-layouts')
 const rowdy = require('rowdy-logger')
 const morgan = require('morgan')
-const db = require('./models/index.js') //ADDED
+const db = require('./models/index.js')
 const cryptoJS = require('crypto-js')
 const cookieParser = require('cookie-parser')
-
+// add method override for the delete route - look at dinos crud
 const app = express()
 const rowdyResults = rowdy.begin(app)
 const PORT = process.env.PORT || 3000
@@ -21,19 +21,15 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 app.use(async (req, res, next) => {
-    // console.log(req.cookies)
     if (req.cookies.userId) {
-        const decryptedId = cryptoJS.AES.decrypt(req.cookies.userId, process.env.COOKIE_SECRET).toString(cryptoJS.enc.Utf8)
-        // console.log(req.cookies.userId)
-        // console.log(process.env.COOKIE_SECRET)
-        // console.log(decryptedId);
 
+        const decryptedId = cryptoJS.AES.decrypt(req.cookies.userId, process.env.COOKIE_SECRET).toString(cryptoJS.enc.Utf8)
+    
         const user = await db.user.findOne({
             where: {
                 id: decryptedId
             }
         })
-        console.log(user)
         res.locals.user = user
     } else {
         res.locals.user = null
@@ -48,17 +44,10 @@ app.use('/household_items', require('./controllers/household_itemController'))
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index.ejs')
 })
 
-// Favorites route
-// app.get('/favorites', (req, res) => {
-//     res.render('favorite')
-// })
-
 app.get('/favorite', async (req, res) => {
-    console.log('🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉')
-    console.log(req.body)
     if (!res.locals.user) {
         res.redirect('/users/login')
     } else {
@@ -67,16 +56,12 @@ app.get('/favorite', async (req, res) => {
                 where: { id: res.locals.user.id },
                 include: db.villager
             })
-
-            console.log(user)
-            // res.render('favorite', { villagers: user })
-            res.render('/favorite', { villagers: user.dataValues.villagers })
+            res.render('favorite.ejs', { villagers: user.villagers })
         } catch (err) {
             console.log(err)
         }
     }
 })
-
 
 app.listen(PORT, () => {
     rowdyResults.print()

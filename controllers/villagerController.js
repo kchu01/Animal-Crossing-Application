@@ -50,10 +50,8 @@ router.post('/', async (req, res) => {
         const [newVillager, created] = await db.villager.findOrCreate({
             where: { name: req.body.name }
         })
-        // console.log(newVillager)
-        // console.log(created)
-
-        res.redirect('./favorite')
+        res.locals.user.addVillager(newVillager)
+        res.redirect('/favorite')
 
     } catch (error) {
         console.log(error)

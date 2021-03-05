@@ -17,12 +17,12 @@ router.get('/', async (req, res) => {
             let householdData = {
                 name: name,
                 id: itemArray['internal-id'],
-                imageUrl: itemArray.image_uri // shows undefined, maybe separte const name
+                imageUrl: itemArray.image_uri 
             }
-            // console.log(householdData.id)
             householdItems.push(householdData)
         }
         householdItems.splice(10, householdItems.length)
+        // console.log(householdItems[0].name.split(" ").join("_"), '👀👀👀🐱‍🚀🐱‍🚀👀🐱‍🚀👀')
         res.render('./household_items', { householdItems: householdItems })
     } catch (error) {
         console.log(error)
@@ -30,21 +30,30 @@ router.get('/', async (req, res) => {
 })
 
 // GET Item/:id - Show details on one
-
-// cant grab proper id - tried name
 router.get('/:name', async (req, res) => {
     try {
-        console.log(req.params)
-        const name = req.params
-        const acnhUrl = `https://acnhapi.com/v1/houseware/${name}`
+        const acnhUrl = `https://acnhapi.com/v1/houseware/${req.params.name}`
         const response = await axios.get(acnhUrl)
-        const item = response.data
-        console.log(item)
-        res.render('./household_items/show', { item: item })
-    } catch (error) {
+        const householdItem = response.data
 
+        res.render('./household_items/show', { householdItem: householdItem })
+    } catch (error) {
+        console.log(error)
     }
-    console.log(error)
+})
+
+// POST route
+router.post('/', async (req, res) => {
+    try {
+        const [newHouseholdItem, created] = await db.householdItem.findOrCreate({
+            where: { name: req.body.name }
+        })
+        res.locals.user.addHouseholdItem(newHouseholdItem)
+        res.redirect('/favorite')
+    } catch(error) {
+        console.log(error)
+        res.redirect('/')
+    }
 })
 
 module.exports = router

@@ -10,6 +10,6 @@ bugs to fix:
 * solved - villager details shows up on console but not rendering
 * solved - household_items can grab data from console but cannot grab name 
 * solved - user is not defined - navbar separation
-* favorites page doesnt take in data sent by villagerController
+* solved - favorites page doesnt take in data sent by villagerController
 
 
