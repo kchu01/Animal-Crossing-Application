@@ -9,30 +9,7 @@ set up api and villagers routes
 bugs to fix:
 * solved - villager details shows up on console but not rendering
 * solved - household_items can grab data from console but cannot grab name 
-* user is not defined - navbar separation
-* create favorites page that takes both villagers and items
+* solved - user is not defined - navbar separation
+* favorites page doesnt take in data sent by villagerController
 
 
-
-<!-- <nav>
-    <div>
-        <a href="/villagers">Villagers</a>
-        <a href="/household_items">Items</a>
-    </div>
-
-    <div>
-        <% if (user) { %>
-            <a href="/users/logout">Logout</a>
-            <% } else { %>
-                <a href="/">Home</a>
-                <a href="/users/new">Sign Up</a>
-                <a href="/users/login">Login</a>
-                <% } %>
-    </div>
-
-</nav> -->
-
-<% if (user) { %>
-    <h4>Welcome, <%= user.username %>
-    </h4>
-    <% } %>

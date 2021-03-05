@@ -5,7 +5,20 @@
         <h3>
             <img class="gallery_img" img src="<%= householdItem.imageUrl %>" alt="Household Item Image">
 
-            <a href=/householdItems/<%=householdItem.id %>><%=householdItem.name %></a>
+            <div class="favorite">
+                <div>
+                    <a href=/householdItems/<%=householdItem.id %>><%=householdItem.name %></a>
+                </div>
+
+                <div>
+                    <form method="POST" action="/favorite">
+                        <input type="hidden" name="name" value="<%= householdItem.name %>">
+                        <input type="submit" value="fav">
+                    </form>
+                </div>
+            </div>
+
+
         </h3>
         <% }) %>
 </div>

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.household_item.belongsToMany(models.user, { through: 'users_household_items' })
     }
   };
   household_item.init({

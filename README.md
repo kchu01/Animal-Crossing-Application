@@ -107,11 +107,11 @@ Household_Items Chart
 
 * Thursday
   * Finish logging in/out - fix navbar to display favorites when logged in
+  * Authentication
   * Create favorites route
-  * Add favorites page
+  * Add favorites page - grab favorites input from db
 
 * Friday
-  * Authentication
   * Correct any bugs
   * Style pages
   * Stretch goals

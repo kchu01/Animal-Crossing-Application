@@ -43,16 +43,21 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// POST - Adds to favorites
-// router.post('favorite', async (req, res) => {
-//     try {
-//         const [newVillager, created] = await db.villager.findOrCreate({
-//             where: { name: req.body.name }
-//         })
-//         res.redirect('favorite')
-//     } catch (error) {
-//         console.log(error)
-//     }
-// })
+// favorite post should hit this post
+router.post('/', async (req, res) => {
+    // console.log(req.body)
+    try {
+        const [newVillager, created] = await db.villager.findOrCreate({
+            where: { name: req.body.name }
+        })
+        // console.log(newVillager)
+        // console.log(created)
+
+        res.redirect('./favorites')
+    } catch (error) {
+        console.log(error)
+        res.redirect('index')
+    }
+})
 
 module.exports = router
