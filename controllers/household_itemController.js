@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
                 id: itemArray['internal-id'],
                 imageUrl: itemArray.image_uri // shows undefined, maybe separte const name
             }
+            // console.log(householdData.id)
             householdItems.push(householdData)
         }
         householdItems.splice(10, householdItems.length)
@@ -31,12 +32,14 @@ router.get('/', async (req, res) => {
 // GET Item/:id - Show details on one
 
 // cant grab proper id - tried name
-router.get('/:id', async (req, res) => {
+router.get('/:name', async (req, res) => {
     try {
-        const acnhURL = `https://acnhapi.com/v1/houseware/${req.params.id}`
-        const response = await axios.get(acnhURL)
+        console.log(req.params)
+        const name = req.params
+        const acnhUrl = `https://acnhapi.com/v1/houseware/${name}`
+        const response = await axios.get(acnhUrl)
         const item = response.data
-
+        console.log(item)
         res.render('./household_items/show', { item: item })
     } catch (error) {
 
