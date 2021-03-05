@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
 
 // favorite post should hit this post
 router.post('/', async (req, res) => {
-    // console.log(req.body)
+    console.log(req.body)
     try {
         const [newVillager, created] = await db.villager.findOrCreate({
             where: { name: req.body.name }
@@ -53,11 +53,13 @@ router.post('/', async (req, res) => {
         // console.log(newVillager)
         // console.log(created)
 
-        res.redirect('./favorites')
+        res.redirect('./favorite')
+
     } catch (error) {
         console.log(error)
-        res.redirect('index')
+        res.redirect('/')
     }
 })
+
 
 module.exports = router

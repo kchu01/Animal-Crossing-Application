@@ -24,9 +24,9 @@ app.use(async (req, res, next) => {
     // console.log(req.cookies)
     if (req.cookies.userId) {
         const decryptedId = cryptoJS.AES.decrypt(req.cookies.userId, process.env.COOKIE_SECRET).toString(cryptoJS.enc.Utf8)
-        console.log(req.cookies.userId)
-        console.log(process.env.COOKIE_SECRET)
-        console.log(decryptedId);
+        // console.log(req.cookies.userId)
+        // console.log(process.env.COOKIE_SECRET)
+        // console.log(decryptedId);
 
         const user = await db.user.findOne({
             where: {
@@ -52,11 +52,13 @@ app.get('/', (req, res) => {
 })
 
 // Favorites route
-app.get('/favorites', (req, res) => {
-    res.render('favorite')
-})
+// app.get('/favorites', (req, res) => {
+//     res.render('favorite')
+// })
 
-app.get('/favorites', async (req, res) => {
+app.get('/favorite', async (req, res) => {
+    console.log('🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉🐱‍🐉')
+    console.log(req.body)
     if (!res.locals.user) {
         res.redirect('/users/login')
     } else {
@@ -66,13 +68,15 @@ app.get('/favorites', async (req, res) => {
                 include: db.villager
             })
 
-            // console.log(user)
-            res.render('villager/index', { villagers: user.dataValues.villagers })
+            console.log(user)
+            // res.render('favorite', { villagers: user })
+            res.render('/favorite', { villagers: user.dataValues.villagers })
         } catch (err) {
             console.log(err)
         }
     }
 })
+
 
 app.listen(PORT, () => {
     rowdyResults.print()

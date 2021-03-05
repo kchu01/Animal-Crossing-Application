@@ -1,4 +1,23 @@
-<h1>Villager Details Page</h1>
+<h1>
+    <%= villager.name['name-USen'] %> Details Page
+</h1>
 
-<%= villager.name['name-USen'] %>
+<div class="details">
     <img src="<%= villager.image_uri %>">
+    <h2>
+        <div>
+            Personality: <%= villager.personality %>
+        </div>
+        <div>
+            Birthday: <%= villager.birthday %>
+        </div>
+        <div>
+            Species: <%= villager.species %>
+        </div>
+        <div>
+            Hobby: <%= villager.hobby %>
+        </div>
+    </h2>
+
+
+</div>

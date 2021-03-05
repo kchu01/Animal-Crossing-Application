@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
             const name = itemArray.name['name-USen']
             let householdData = {
                 name: name,
+                id: itemArray['internal-id'],
                 imageUrl: itemArray.image_uri // shows undefined, maybe separte const name
             }
             householdItems.push(householdData)
@@ -25,6 +26,22 @@ router.get('/', async (req, res) => {
     } catch (error) {
         console.log(error)
     }
+})
+
+// GET Item/:id - Show details on one
+
+// cant grab proper id - tried name
+router.get('/:id', async (req, res) => {
+    try {
+        const acnhURL = `https://acnhapi.com/v1/houseware/${req.params.id}`
+        const response = await axios.get(acnhURL)
+        const item = response.data
+
+        res.render('./household_items/show', { item: item })
+    } catch (error) {
+
+    }
+    console.log(error)
 })
 
 module.exports = router

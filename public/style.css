@@ -1,10 +1,11 @@
 body {
     margin: 0px;
-    
+    font-family: 'Rubik', sans-serif;
 }
 
 nav {
     display: flex;
+    position: sticky;
     justify-content: space-between;
     background-color: rgba(123, 192, 180);
     padding: 10px;
@@ -23,6 +24,7 @@ nav a:hover {
 .container {
     width: 75%;
     margin: 0 auto;
+    padding-bottom: 100px;
 }
 
 .banner {
@@ -49,6 +51,17 @@ nav a:hover {
     display: grid;
     grid-auto-flow: column;
 }
+
+/* .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(123, 192, 180);
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+ } */
 
 /* .sticky {
     position: fixed;
