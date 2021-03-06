@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
 
 // favorite post should hit this post
 router.post('/', async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     try {
         const [newVillager, created] = await db.villager.findOrCreate({
             where: { name: req.body.name }

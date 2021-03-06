@@ -8,10 +8,10 @@ router.get('/', async (req, res) => {
         const householdItemsUrl = 'https://acnhapi.com/v1/houseware/'
         const responce = await axios.get(householdItemsUrl)
 
-        const householdItems = []
+        const items = []
 
-        for (const householdItem in responce.data) {
-            const householdItemArray = responce.data[householdItem]
+        for (const item in responce.data) {
+            const householdItemArray = responce.data[item]
             const itemArray = householdItemArray[0]
             const name = itemArray.name['name-USen']
             let householdData = {
@@ -19,11 +19,11 @@ router.get('/', async (req, res) => {
                 id: itemArray['internal-id'],
                 imageUrl: itemArray.image_uri 
             }
-            householdItems.push(householdData)
+            items.push(householdData)
         }
-        householdItems.splice(10, householdItems.length)
+        items.splice(10, items.length)
         // console.log(householdItems[0].name.split(" ").join("_"), '👀👀👀🐱‍🚀🐱‍🚀👀🐱‍🚀👀')
-        res.render('./household_items', { householdItems: householdItems })
+        res.render('./items', { items: items })
     } catch (error) {
         console.log(error)
     }
@@ -34,21 +34,22 @@ router.get('/:name', async (req, res) => {
     try {
         const acnhUrl = `https://acnhapi.com/v1/houseware/${req.params.name}`
         const response = await axios.get(acnhUrl)
-        const householdItem = response.data
+        const item = response.data
 
-        res.render('./household_items/show', { householdItem: householdItem })
+        res.render('./items/show', { item: item })
     } catch (error) {
         console.log(error)
     }
 })
 
-// POST route
+// POST route - favorites
 router.post('/', async (req, res) => {
     try {
-        const [newHouseholdItem, created] = await db.householdItem.findOrCreate({
+        const [newItem, created] = await db.item.findOrCreate({
             where: { name: req.body.name }
         })
-        res.locals.user.addHouseholdItem(newHouseholdItem)
+        // console.log(newHouseholdItem) //works
+        res.locals.user.addItem(newItem)
         res.redirect('/favorite')
     } catch(error) {
         console.log(error)

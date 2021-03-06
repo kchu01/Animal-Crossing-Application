@@ -12,4 +12,23 @@ bugs to fix:
 * solved - user is not defined - navbar separation
 * solved - favorites page doesnt take in data sent by villagerController
 
+* correct all householditem to item
+* items show details page isnt rendering
+* item favorites not working
 
+to do:
+* delete route
+* put route - update
+* one stretch goal
+* update readme
+
+
+sequelize model:generate --name=user --attributes username:string,password:string
+
+sequelize model:generate --name=users_villager --attributes userId:integer,villagerId:integer
+
+sequelize model:generate --name=villager --attributes name:string
+
+sequelize model:generate --name=item --attributes name:string
+
+sequelize model:generate --name=users_item --attributes userId:integer,itemId:integer

@@ -7,7 +7,8 @@ const morgan = require('morgan')
 const db = require('./models/index.js')
 const cryptoJS = require('crypto-js')
 const cookieParser = require('cookie-parser')
-// add method override for the delete route - look at dinos crud
+const methodOverride = require('method-override')
+
 const app = express()
 const rowdyResults = rowdy.begin(app)
 const PORT = process.env.PORT || 3000
@@ -18,6 +19,7 @@ app.use(ejsLayouts)
 app.use(morgan('dev'))
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
+app.use(methodOverride('_method'))
 app.use(cookieParser())
 
 app.use(async (req, res, next) => {
@@ -40,7 +42,7 @@ app.use(async (req, res, next) => {
 // Controllers
 app.use('/users', require('./controllers/userController.js'))
 app.use('/villagers', require('./controllers/villagerController.js'))
-app.use('/household_items', require('./controllers/household_itemController'))
+app.use('/items', require('./controllers/itemController'))
 
 // Routes
 app.get('/', (req, res) => {
@@ -55,13 +57,19 @@ app.get('/favorite', async (req, res) => {
             const user = await db.user.findOne({
                 where: { id: res.locals.user.id },
                 include: db.villager
+                // include: [db.villager, db.item]
             })
             res.render('favorite.ejs', { villagers: user.villagers })
+            // , items: user.items
         } catch (err) {
             console.log(err)
         }
     }
 })
+
+// app.delete('/favorite', async (req, res) => {
+
+// })
 
 app.listen(PORT, () => {
     rowdyResults.print()

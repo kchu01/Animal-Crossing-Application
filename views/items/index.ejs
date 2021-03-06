@@ -1,0 +1,26 @@
+<h1>Household Items</h1>
+
+<div class="gallery">
+    <% items.forEach(item=> { %>
+        <h3>
+            <img class="gallery_img" img src="<%= item.imageUrl %>" alt="Household Item Image">
+
+            <div class="favorite">
+                <div>
+                    <a href=/items/<%=item.name.split(" ").join("_") %> >
+                        <%=item.name %>
+                    </a>
+                </div>
+
+                <div>
+                    <form method="POST" action="/items">
+                        <input type="hidden" name="name" value="<%= item.name %>">
+                        <input type="submit" value="fav">
+                    </form>
+                </div>
+            </div>
+
+
+        </h3>
+        <% }) %>
+</div>

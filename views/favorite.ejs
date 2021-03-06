@@ -1,11 +1,17 @@
 <h1>Favorites</h1>
 
-// figure out how to pull data into here
-<!-- <% // console.log(villagers) %>
-    <%= // villagers.name %> -->
-
-<% villagers.forEach(villager=> { %>
-    <h3>
-        <%= villager.name %>
-    </h3>
+<div class="gallery">
+    <% villagers.forEach(villager=> { %>
+        <div>
+            <h3>
+                <%= villager.name %>
+            </h3>
+        </div>
+        
+        <div>
+            <form method="POST" action="/villagers/<%= villager.id %>/?_method=DELETE">
+                <input type="submit" value="remove">
+            </form>
+        </div>
     <% }) %>
+</div>
