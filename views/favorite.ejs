@@ -18,7 +18,7 @@
          <h3>
              <%= item.name %>
          </h3>
-         <form method="POST" action="/items/<%= item.name %>/?_method=DELETE">
+         <form method="POST" action="/items/<%= item.id %>/?_method=DELETE">
             <input type="submit" value="remove">
         </form>
      </div>

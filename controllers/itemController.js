@@ -57,4 +57,16 @@ router.post('/', async (req, res) => {
     }
 })
 
+// delete route
+router.delete('/:id', async (req, res) => {
+    try {
+        const item = await db.item.findByPk(req.params.id)
+        console.log(item)
+        res.locals.user.removeItem(item)
+        res.redirect('/favorite')
+    } catch(error) {
+        console.log(error)
+    }
+})
+
 module.exports = router

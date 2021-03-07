@@ -67,7 +67,7 @@ router.delete('/:id', async (req, res) => {
         res.locals.user.removeVillager(villager)
         res.redirect('/favorite')
     } catch(error) {
-        console.log("DEBUG:", error)
+        console.log(error)
     }
 })
 
