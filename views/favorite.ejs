@@ -1,17 +1,27 @@
 <h1>Favorites</h1>
 
+<h1>Villager and Items</h1>
 <div class="gallery">
     <% villagers.forEach(villager=> { %>
         <div>
             <h3>
                 <%= villager.name %>
             </h3>
-        </div>
-        
-        <div>
             <form method="POST" action="/villagers/<%= villager.id %>/?_method=DELETE">
                 <input type="submit" value="remove">
             </form>
         </div>
     <% }) %>
+        
+    <% items.forEach(item => { %>
+     <div>
+         <h3>
+             <%= item.name %>
+         </h3>
+         <form method="POST" action="/items/<%= item.name %>/?_method=DELETE">
+            <input type="submit" value="remove">
+        </form>
+     </div>
+    <% }) %>
 </div>
+

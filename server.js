@@ -56,10 +56,10 @@ app.get('/favorite', async (req, res) => {
         try {
             const user = await db.user.findOne({
                 where: { id: res.locals.user.id },
-                include: db.villager
-                // include: [db.villager, db.item]
+                // include: db.villager
+                include: [db.villager, db.item]
             })
-            res.render('favorite.ejs', { villagers: user.villagers })
+            res.render('favorite.ejs', { villagers: user.villagers, items: user.items })
             // , items: user.items
         } catch (err) {
             console.log(err)
@@ -68,7 +68,12 @@ app.get('/favorite', async (req, res) => {
 })
 
 // app.delete('/favorite', async (req, res) => {
-
+//     try {
+//         const villager = await db.villager.findByPk(req.params.id)
+//         const removedVillager = await
+//     } catch(error) {
+//         console.log(error)
+//     }
 // })
 
 app.listen(PORT, () => {
