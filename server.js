@@ -67,14 +67,6 @@ app.get('/favorite', async (req, res) => {
     }
 })
 
-// app.delete('/favorite', async (req, res) => {
-//     try {
-//         const villager = await db.villager.findByPk(req.params.id)
-//         const removedVillager = await
-//     } catch(error) {
-//         console.log(error)
-//     }
-// })
 
 app.listen(PORT, () => {
     rowdyResults.print()

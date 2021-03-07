@@ -59,5 +59,16 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const villager = await db.villager.findByPk(req.params.id)
+        // const removedVillager = await
+        console.log(villager)
+        res.locals.user.removeVillager(villager)
+        res.redirect('/favorite')
+    } catch(error) {
+        console.log("DEBUG:", error)
+    }
+})
 
 module.exports = router
