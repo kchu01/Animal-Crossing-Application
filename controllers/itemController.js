@@ -21,8 +21,7 @@ router.get('/', async (req, res) => {
             }
             items.push(householdData)
         }
-        items.splice(10, items.length)
-        // console.log(householdItems[0].name.split(" ").join("_"), '👀👀👀🐱‍🚀🐱‍🚀👀🐱‍🚀👀')
+        items.splice(50, items.length)
         res.render('./items', { items: items })
     } catch (error) {
         console.log(error)
@@ -48,7 +47,6 @@ router.post('/', async (req, res) => {
         const [newItem, created] = await db.item.findOrCreate({
             where: { name: req.body.name }
         })
-        // console.log(newHouseholdItem) //works
         res.locals.user.addItem(newItem)
         res.redirect('/favorite')
     } catch(error) {

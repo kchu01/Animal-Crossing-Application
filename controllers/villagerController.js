@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
             }
             villagers.push(villagerData)
         }
-        villagers.splice(10, villagers.length)
+        villagers.splice(50, villagers.length)
         res.render('./villagers', { villagers: villagers })
 
     } catch (error) {
@@ -43,9 +43,8 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-// favorite post should hit this post
+// favorite post should hit this route
 router.post('/', async (req, res) => {
-    // console.log(req.body)
     try {
         const [newVillager, created] = await db.villager.findOrCreate({
             where: { name: req.body.name }
@@ -62,8 +61,6 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const villager = await db.villager.findByPk(req.params.id)
-        // const removedVillager = await
-        console.log(villager)
         res.locals.user.removeVillager(villager)
         res.redirect('/favorite')
     } catch(error) {

@@ -21,9 +21,6 @@ router.post('/', async (req, res) => {
             username: req.body.username,
             password: hashedPassword
         })
-
-        // console.log(res.locals.user)
-
         const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
         res.cookie('userId', encryptedId)
         res.redirect('/')
@@ -38,14 +35,12 @@ router.get('/login', (req, res) => {
     res.render('users/login')
 })
 
-// LOGIN - POST - user login pw -- NEED TO WORK ON
+// LOGIN - POST
 router.post('/login', async (req, res) => {
     try {
         const user = await db.user.findOne({
             where: { username: req.body.username }
         })
-        // console.log(req.body.password)
-        // console.log(user.password)
         if (user && bcrypt.compareSync(req.body.password, user.password)) {
             const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
             res.cookie('userId', encryptedId)
@@ -60,9 +55,9 @@ router.post('/login', async (req, res) => {
     }
 })
 
-// PROFILE - GET - After login, user gets sent to the profile page 
+// PROFILE - GET  
 router.get('/profile', (req, res) => {
-    res.render('users/profile', { user: req.user }) // ADDED THIS LINE
+    res.render('users/profile', { user: req.user })
 })
 
 // LOGOUT - GET route - /users/logout

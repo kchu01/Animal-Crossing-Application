@@ -23,6 +23,9 @@ to do:
 * update readme
 
 
+
+models:
+
 sequelize model:generate --name=user --attributes username:string,password:string
 
 sequelize model:generate --name=users_villager --attributes userId:integer,villagerId:integer

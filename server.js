@@ -56,17 +56,14 @@ app.get('/favorite', async (req, res) => {
         try {
             const user = await db.user.findOne({
                 where: { id: res.locals.user.id },
-                // include: db.villager
                 include: [db.villager, db.item]
             })
             res.render('favorite.ejs', { villagers: user.villagers, items: user.items })
-            // , items: user.items
         } catch (err) {
             console.log(err)
         }
     }
 })
-
 
 app.listen(PORT, () => {
     rowdyResults.print()

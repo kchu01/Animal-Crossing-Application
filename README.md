@@ -34,36 +34,35 @@ Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal
 ## RESTful Routing Chart
 Users Chart
 
-| Method  | URL             | Functionality   | View                 |
-| ------- | ----------      | --------------  | -------------------  |
-| GET     | /users/new      | sign up         | redirect to /index   |
-| POST    | /users          | create new user | redirect to /profile |
-| GET     | /users/login    | login           | redirect to /index   |
-| POST    | /users/login    | logs in new user| redirect to /profile |
-| GET     | /users/logout   | logout          | redirect to /index   |
+| Method  | URL             | Functionality           | View                 |
+| ------- | ----------      | --------------          | -------------------  |
+| GET     | /users/new      | sign up                 | redirect to /new     |
+| POST    | /users          | create new user         | redirect to /        |
+| GET     | /users/login    | login                   | redirect to /login   |
+| GET     | /users/login    | logs in new user        | redirect to /login   |
+| GET     | /users/profile  | direct user to fav prof | redirect to /profile |
+| GET     | /users/logout   | logout                  | redirect to /        |
 
 
 Villagers Chart
 
-| Method  | URL             | Functionality      | View                       |
-| ------- | ----------      | --------------     | ------------------------   |
-| GET     | /villagers      | list all villagers | show villagers/index.ejs   |
-| POST    | /villagers      | add a villager     | redirect to /villagers/:id |
-| GET     | /villagers/:id  | show one villager  | show villagers/detail.ejs  |
-| PUT     | /villagers/:id  | update a villager  | redirect to /villagers/:id |
-| DELETE  | /villagers/:id  | delete a villager  | redirect to /villagers     |
+| Method  | URL             | Functionality      | View                   |
+| ------- | ----------      | --------------     | -----------------------|
+| GET     | /villagers      | list all villagers | show villagers/index   |
+| POST    | /villagers      | favs a villager    | redirect to /favorites |
+| GET     | /villagers/:id  | show one villager  | show villagers/show    |
+| DELETE  | /villagers/:id  | delete a villager  | redirect to /favorites |
 
 
 
-Household_Items Chart
+Items Chart
 
-| Method  | URL                   | Functionality  | View                   |
-| ------- | ----------            | -------------- | ---------------------- |
-| GET     | /household_items      | list all items | show items/index.ejs   |
-| POST    | /household_items      | add an item    | redirect to /items/:id |
-| GET     | /household_items/:id  | show one item  | show items/detail.ejs  |
-| PUT     | /household_items/:id  | update a item  | redirect to /items/:id |
-| DELETE  | /household_items/:id  | delete a item  | redirect to /items     |
+| Method  | URL         | Functionality  | View                   |
+| ------- | ----------  | -------------- | ---------------------- |
+| GET     | /items      | list all items | show items/index       |
+| POST    | /items      | favs an item   | redirect to /favorites |
+| GET     | /items/:id  | show one item  | show items/show        |
+| DELETE  | /items/:id  | delete a item  | redirect to /favorites |
 
 ## MVP Goals
 
@@ -112,14 +111,19 @@ Household_Items Chart
   * Add favorites page - grab favorites input from db
 
 * Friday
+  * Correct items route
+  * npm install new models (item model was incorrect)
+  * Continue working on favorites page
   * Correct any bugs
   * Style pages
-  * Stretch goals
-  * MVP
 
 * Saturday / Sunday
+  * Squash bugs in favorites route
+  * Add a delete route (allows users to remove a fav villager/item)
+  * MVP (Saturday)
+  * Update Readme
   * More styling
-  * Stretch goals
+  * Stretch goal?
 
 ## Resources | APIs
 
