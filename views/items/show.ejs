@@ -2,4 +2,21 @@
      Item Details Page
 </h1>
 
-<%= item.name %>
+<div class="details">
+    <img src="<%= item.image_uri %>"> 
+     <h2>
+          <div>
+               Name: <%= item.name['name-USen'] %>
+          </div>
+          <div>
+               Category: <%= item.tag %>
+          </div>
+          <div>
+               Dimension: <%= item.size %> squares
+          </div>
+          <div>
+               Is Interactive: <%= item.isInteractive %>
+          </div>
+     </h2>     
+</div>
+

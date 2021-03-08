@@ -6,12 +6,12 @@ const axios = require('axios')
 router.get('/', async (req, res) => {
     try {
         const householdItemsUrl = 'https://acnhapi.com/v1/houseware/'
-        const responce = await axios.get(householdItemsUrl)
+        const response = await axios.get(householdItemsUrl)
 
         const items = []
 
-        for (const item in responce.data) {
-            const householdItemArray = responce.data[item]
+        for (const item in response.data) {
+            const householdItemArray = response.data[item]
             const itemArray = householdItemArray[0]
             const name = itemArray.name['name-USen']
             let householdData = {
@@ -33,13 +33,14 @@ router.get('/:name', async (req, res) => {
     try {
         const acnhUrl = `https://acnhapi.com/v1/houseware/${req.params.name}`
         const response = await axios.get(acnhUrl)
-        const item = response.data
-
+        const item = response.data[0]
+        
         res.render('./items/show', { item: item })
     } catch (error) {
         console.log(error)
     }
 })
+
 
 // POST route - favorites
 router.post('/', async (req, res) => {
