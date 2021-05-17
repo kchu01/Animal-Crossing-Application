@@ -79,51 +79,6 @@ Items Chart
 * Sticky Navbar
 * Pagination
 
-## Daily Sprints
-
-* Monday
-  * Soft/hard pitch
-  * Test API
-  * Wireframe app
-  * Plan routes 
-  * Install required packages
-  * Create db models - test db
-  * Set up basic html/css
-  * Start user routes
-
-* Tuesday
-  * Update readme with wireframes
-  * Test API
-  * Render villager name and image
-  * User routes/Villager routes - create loops
-  * Format grid view of villagers
-
-* Wednesday
-  * Show details page on Villagers
-  * Items index page
-  * Items show details page 
-  * Start working on logging in and signing out (creating the pages and forms)
-
-* Thursday
-  * Finish logging in/out - fix navbar to display favorites when logged in
-  * Authentication
-  * Create favorites route
-  * Add favorites page - grab favorites input from db
-
-* Friday
-  * Correct items route
-  * npm install new models (item model was incorrect)
-  * Continue working on favorites page
-  * Correct any bugs
-  * Style pages
-
-* Saturday / Sunday
-  * Squash bugs in favorites route
-  * Add a delete route (allows users to remove a fav villager/item)
-  * MVP (Saturday)
-  * Update Readme
-  * More styling
-  * Stretch goal?
 
 ## Resources | APIs
 
