@@ -4,6 +4,9 @@
 
 An Animal Crossing full-stack application utilizing <i>express, node.js, postgres, and ejs</i>.
 
+View the live site here: 
+https://animal-crossing-application.herokuapp.com/
+
 #### Backstory: Animal Crossing
 
 Since its first release in 2001 by Katsuya Eguchi and Hisashi Nogami, the Animal Crossing franchise has become a successful hit. Five games have been released wordwide along with three mobile applicaions. 
